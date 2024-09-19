@@ -1,0 +1,1 @@
+# Compono-automation-exercise
