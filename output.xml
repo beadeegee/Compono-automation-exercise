@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on darwin)" generated="2024-09-19T11:22:43.660543" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Cases" source="/Users/beadeegee/Documents/Robot/Compono/Tests/Test_Cases.robot">
+<test id="s1-t1" name="Upload with invalid Resume for the first time" line="18">
+<kw name="Normalize Path" owner="OperatingSystem">
+<msg time="2024-09-19T11:22:43.953776" level="INFO">${Normal_resumepath} = /Users/beadeegee/Documents/Robot/Compono/TestData/Zoom.jpeg</msg>
+<var>${Normal_resumepath}</var>
+<arg>${invalidresumepath}</arg>
+<doc>Normalizes the given path.</doc>
+<status status="PASS" start="2024-09-19T11:22:43.953286" elapsed="0.008592"/>
+</kw>
+<kw name="Open Website and Login User" owner="Actions">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:22:43.973544" level="INFO">Opening browser 'googlechrome' to base url 'https://candidate-qa-test.dev.platform.compono.dev/'.</msg>
+<arg>${URL}</arg>
+<arg>googlechrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-19T11:22:43.972799" elapsed="4.769743"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-19T11:22:48.744875" elapsed="0.350417"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-09-19T11:22:49.095655" elapsed="0.002501"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:22:49.109733" level="INFO">Typing text 'beatricedeguzman23@gmail.com' into text field '//input[@placeholder="yours@example.com"]'.</msg>
+<arg>${UserInput}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:22:49.107185" elapsed="0.766316"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:22:49.874429" level="INFO">Typing password into text field '//input[@placeholder="your password"]'.</msg>
+<msg time="2024-09-19T11:22:49.914815" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PassInput}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:22:49.873925" elapsed="0.147924"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:22:50.022472" level="INFO">Clicking element '//button[@name="submit"]'.</msg>
+<arg>${LoginButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:22:50.022147" elapsed="0.058151"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-09-19T11:22:50.080632" elapsed="0.002584"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:22:57.430105" level="INFO">Element '//h3[@class="H3-sc-1f2idct-0 iQVOHt"]' is displayed.</msg>
+<arg>${ModalHeader}</arg>
+<arg>Upload CV / Resume</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-19T11:22:50.083562" elapsed="7.346913"/>
+</kw>
+<arg>${URL}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2024-09-19T11:22:43.971509" elapsed="13.459196"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:22:57.431292" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg time="2024-09-19T11:22:57.436955" level="INFO">Verifying element '//div[@class="sc-kPVwWT gZwsmE"]//label' contains exact text 'Profile prefill is on
+Prefill my profile with information extracted from my CV'.</msg>
+<arg>${PrefillLabel}</arg>
+<arg>Profile prefill is on${\n}Prefill my profile with information extracted from my CV</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-19T11:22:57.431350" elapsed="0.061564"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:22:57.493945" level="INFO">Sending /Users/beadeegee/Documents/Robot/Compono/TestData/Zoom.jpeg to browser.</msg>
+<arg>${UploadButtonModal}</arg>
+<arg>${Normal_resumepath}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:22:57.493395" elapsed="0.056610"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:22:57.573280" level="INFO">Element '//div[@class="sc-iujRgT DUXry"]' is displayed.</msg>
+<arg>${UploadFail}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-19T11:22:57.550548" elapsed="0.022988"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:22:57.574454" level="INFO">Clicking element '//*[local-name()='svg' and @class='CloseIconButton-sc-19wgu2s-0 cIsOEY']/*[local-name()='path']'.</msg>
+<arg>${CloseButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:22:57.573967" elapsed="0.059641"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:23:27.693993" level="INFO">Element '//h2[@class="sc-GMQeP kArsSQ"]' did not exist.</msg>
+<arg>${DeleteCVButton}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-09-19T11:22:57.634168" elapsed="30.060152"/>
+</kw>
+<kw name="Delete All and Close Browser" owner="Actions" type="TEARDOWN">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:23:58.041313" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-43.png"&gt;&lt;img src="selenium-screenshot-43.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-19T11:23:58.041777" level="FAIL">Element with locator '//h2[@class="sc-GMQeP kArsSQ"]' not found.</msg>
+<arg>${DeleteCVButton}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-09-19T11:23:27.696868" elapsed="30.356479">Element with locator '//h2[@class="sc-GMQeP kArsSQ"]' not found.</status>
+</kw>
+<msg time="2024-09-19T11:23:58.053685" level="INFO">${IsDeleteCVButtonVisible} = False</msg>
+<var>${IsDeleteCVButtonVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${DeleteCVButton}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-09-19T11:23:27.696363" elapsed="30.357442"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:24:28.360966" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-44.png"&gt;&lt;img src="selenium-screenshot-44.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-19T11:24:28.361241" level="FAIL">Element with locator '//h3[@class="H3-sc-1f2idct-0 sc-gojNiO nSMOr" and text()="Experience and Skills"]//span' not found.</msg>
+<arg>${NeedsReview}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-09-19T11:23:58.054411" elapsed="30.307942">Element with locator '//h3[@class="H3-sc-1f2idct-0 sc-gojNiO nSMOr" and text()="Experience and Skills"]//span' not found.</status>
+</kw>
+<msg time="2024-09-19T11:24:28.364507" level="INFO">${IsNeedsReviewVisible} = False</msg>
+<var>${IsNeedsReviewVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${NeedsReview}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-09-19T11:23:58.054069" elapsed="30.310976"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-19T11:24:28.366953" elapsed="0.530947"/>
+</kw>
+<arg>'${IsDeleteCVButtonVisible}' == 'False' and '${IsNeedsReviewVisible}' == 'False'</arg>
+<arg>Close Browser</arg>
+<arg>ELSE IF</arg>
+<arg>'${IsDeleteCVButtonVisible}' == 'True' and '${IsNeedsReviewVisible}' == 'False'</arg>
+<arg>Delete CV</arg>
+<arg>ELSE</arg>
+<arg>Delete CV and Prefill</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-19T11:24:28.365692" elapsed="0.532850"/>
+</kw>
+<status status="PASS" start="2024-09-19T11:23:27.695272" elapsed="61.204032"/>
+</kw>
+<tag>Negative TC</tag>
+<status status="PASS" start="2024-09-19T11:22:43.950742" elapsed="104.949134"/>
+</test>
+<test id="s1-t2" name="Upload with valid resume for the first time with Prefill OFF" line="28">
+<kw name="Normalize Path" owner="OperatingSystem">
+<msg time="2024-09-19T11:24:28.903641" level="INFO">${Normal_resumepath} = /Users/beadeegee/Documents/Robot/Compono/TestData/Beatrice_CV.pdf</msg>
+<var>${Normal_resumepath}</var>
+<arg>${resumepath}</arg>
+<doc>Normalizes the given path.</doc>
+<status status="PASS" start="2024-09-19T11:24:28.903301" elapsed="0.000486"/>
+</kw>
+<kw name="Open Website and Login User" owner="Actions">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:24:28.905883" level="INFO">Opening browser 'googlechrome' to base url 'https://candidate-qa-test.dev.platform.compono.dev/'.</msg>
+<arg>${URL}</arg>
+<arg>googlechrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-19T11:24:28.905262" elapsed="4.950977"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-19T11:24:33.857345" elapsed="0.437434"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-09-19T11:24:34.295898" elapsed="0.002114"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:24:34.298954" level="INFO">Typing text 'beatricedeguzman23@gmail.com' into text field '//input[@placeholder="yours@example.com"]'.</msg>
+<arg>${UserInput}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:24:34.298365" elapsed="0.803612"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:24:35.102848" level="INFO">Typing password into text field '//input[@placeholder="your password"]'.</msg>
+<msg time="2024-09-19T11:24:35.138471" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PassInput}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:24:35.102332" elapsed="0.118121"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:24:35.221076" level="INFO">Clicking element '//button[@name="submit"]'.</msg>
+<arg>${LoginButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:24:35.220756" elapsed="0.061211"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-09-19T11:24:35.282254" elapsed="0.009171"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:24:40.753663" level="INFO">Element '//h3[@class="H3-sc-1f2idct-0 iQVOHt"]' is displayed.</msg>
+<arg>${ModalHeader}</arg>
+<arg>Upload CV / Resume</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-19T11:24:35.292954" elapsed="5.461084"/>
+</kw>
+<arg>${URL}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2024-09-19T11:24:28.904381" elapsed="11.849980"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:24:40.755362" level="INFO">Clicking element '//div[@class="sc-kPVwWT gZwsmE"]//input'.</msg>
+<arg>${PrefillRadio}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:24:40.754947" elapsed="0.078125"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:24:40.833476" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg time="2024-09-19T11:24:40.834358" level="INFO">Verifying element '//div[@class="sc-kPVwWT gZwsmE"]//label' contains exact text 'Profile prefill is off
+Prefill my profile with information extracted from my CV'.</msg>
+<arg>${PrefillLabel}</arg>
+<arg>Profile prefill is off${\n}Prefill my profile with information extracted from my CV</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-19T11:24:40.833540" elapsed="0.032726"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:24:40.869204" level="INFO">Sending /Users/beadeegee/Documents/Robot/Compono/TestData/Beatrice_CV.pdf to browser.</msg>
+<arg>${UploadButtonModal}</arg>
+<arg>${Normal_resumepath}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:24:40.867399" elapsed="0.061777"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-09-19T11:24:40.930177" elapsed="0.005486"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:24:48.991567" level="INFO">Element '//p[@class="P-sc-1ninpix-0 gnGpAv" and text()="Success, your CV has been uploaded!"]' is displayed.</msg>
+<arg>${SuccessUploadOFF}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-19T11:24:40.935980" elapsed="8.055912"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:24:48.992894" level="INFO">Clicking element '//*[local-name()='svg' and @class='CloseIconButton-sc-19wgu2s-0 cIsOEY']/*[local-name()='path']'.</msg>
+<arg>${CloseButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:24:48.992346" elapsed="0.058756"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:24:50.360172" level="INFO">Element '//h2[@class="sc-GMQeP kArsSQ"]' is displayed.</msg>
+<arg>${DeleteCVButton}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-19T11:24:49.052898" elapsed="1.308561"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:25:20.432972" level="INFO">Element '//h3[@class="H3-sc-1f2idct-0 sc-gojNiO nSMOr" and text()="Experience and Skills"]//span' did not exist.</msg>
+<arg>${NeedsReview}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-09-19T11:24:50.362325" elapsed="30.071035"/>
+</kw>
+<kw name="Delete All and Close Browser" owner="Actions" type="TEARDOWN">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:25:20.452781" level="INFO">Element '//h2[@class="sc-GMQeP kArsSQ"]' is displayed.</msg>
+<arg>${DeleteCVButton}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-19T11:25:20.437355" elapsed="0.015753"/>
+</kw>
+<msg time="2024-09-19T11:25:20.453372" level="INFO">${IsDeleteCVButtonVisible} = True</msg>
+<var>${IsDeleteCVButtonVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${DeleteCVButton}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-09-19T11:25:20.436978" elapsed="0.016645"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:25:50.851091" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-45.png"&gt;&lt;img src="selenium-screenshot-45.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-19T11:25:50.851391" level="FAIL">Element with locator '//h3[@class="H3-sc-1f2idct-0 sc-gojNiO nSMOr" and text()="Experience and Skills"]//span' not found.</msg>
+<arg>${NeedsReview}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-09-19T11:25:20.454298" elapsed="30.398088">Element with locator '//h3[@class="H3-sc-1f2idct-0 sc-gojNiO nSMOr" and text()="Experience and Skills"]//span' not found.</status>
+</kw>
+<msg time="2024-09-19T11:25:50.853455" level="INFO">${IsNeedsReviewVisible} = False</msg>
+<var>${IsNeedsReviewVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${NeedsReview}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-09-19T11:25:20.453986" elapsed="30.399648"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Delete CV" owner="Actions">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2024-09-19T11:25:50.855440" elapsed="3.226383"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:25:54.082724" level="INFO">Clicking element '//h2[@class="sc-GMQeP kArsSQ"]'.</msg>
+<arg>${DeleteCVbutton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:25:54.082181" elapsed="2.891759"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:25:56.975068" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Do you want to delete this copy of your CV?</arg>
+<arg>ACCEPT</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2024-09-19T11:25:56.974353" elapsed="0.042419"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-19T11:25:57.017245" elapsed="0.354817"/>
+</kw>
+<status status="PASS" start="2024-09-19T11:25:50.855106" elapsed="6.517428"/>
+</kw>
+<arg>'${IsDeleteCVButtonVisible}' == 'False' and '${IsNeedsReviewVisible}' == 'False'</arg>
+<arg>Close Browser</arg>
+<arg>ELSE IF</arg>
+<arg>'${IsDeleteCVButtonVisible}' == 'True' and '${IsNeedsReviewVisible}' == 'False'</arg>
+<arg>Delete CV</arg>
+<arg>ELSE</arg>
+<arg>Delete CV and Prefill</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-19T11:25:50.854490" elapsed="6.518337"/>
+</kw>
+<status status="PASS" start="2024-09-19T11:25:20.434584" elapsed="36.938857"/>
+</kw>
+<tag>Positive TC</tag>
+<status status="PASS" start="2024-09-19T11:24:28.902104" elapsed="88.472795"/>
+</test>
+<test id="s1-t3" name="Upload with valid Resume for the first time with Prefill ON" line="41">
+<kw name="Normalize Path" owner="OperatingSystem">
+<msg time="2024-09-19T11:25:57.377705" level="INFO">${Normal_resumepath} = /Users/beadeegee/Documents/Robot/Compono/TestData/Beatrice_CV.pdf</msg>
+<var>${Normal_resumepath}</var>
+<arg>${resumepath}</arg>
+<doc>Normalizes the given path.</doc>
+<status status="PASS" start="2024-09-19T11:25:57.377268" elapsed="0.001614"/>
+</kw>
+<kw name="Open Website and Login User" owner="Actions">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:25:57.382551" level="INFO">Opening browser 'googlechrome' to base url 'https://candidate-qa-test.dev.platform.compono.dev/'.</msg>
+<arg>${URL}</arg>
+<arg>googlechrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-19T11:25:57.381413" elapsed="4.945548"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-19T11:26:02.328245" elapsed="0.402693"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-09-19T11:26:02.731240" elapsed="0.002269"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:02.734334" level="INFO">Typing text 'beatricedeguzman23@gmail.com' into text field '//input[@placeholder="yours@example.com"]'.</msg>
+<arg>${UserInput}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:26:02.733913" elapsed="0.807557"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:03.542630" level="INFO">Typing password into text field '//input[@placeholder="your password"]'.</msg>
+<msg time="2024-09-19T11:26:03.584390" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PassInput}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:26:03.541905" elapsed="0.148650"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:03.691180" level="INFO">Clicking element '//button[@name="submit"]'.</msg>
+<arg>${LoginButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:26:03.690872" elapsed="0.062040"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-09-19T11:26:03.753455" elapsed="0.001663"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:08.702178" level="INFO">Element '//h3[@class="H3-sc-1f2idct-0 iQVOHt"]' is displayed.</msg>
+<arg>${ModalHeader}</arg>
+<arg>Upload CV / Resume</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-19T11:26:03.757069" elapsed="4.945451"/>
+</kw>
+<arg>${URL}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2024-09-19T11:25:57.380469" elapsed="11.322497"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:08.704117" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg time="2024-09-19T11:26:08.711799" level="INFO">Verifying element '//div[@class="sc-kPVwWT gZwsmE"]//label' contains exact text 'Profile prefill is on
+Prefill my profile with information extracted from my CV'.</msg>
+<arg>${PrefillLabel}</arg>
+<arg>Profile prefill is on${\n}Prefill my profile with information extracted from my CV</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-19T11:26:08.704198" elapsed="0.051442"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:08.758076" level="INFO">Sending /Users/beadeegee/Documents/Robot/Compono/TestData/Beatrice_CV.pdf to browser.</msg>
+<arg>${UploadButtonModal}</arg>
+<arg>${Normal_resumepath}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:26:08.756390" elapsed="0.058697"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-09-19T11:26:08.815933" elapsed="0.008919"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:16.849023" level="INFO">Element '//p[@class="P-sc-1ninpix-0 gnGpAv" and text()="Your CV has been uploaded, and your profile has been prefilled!"]' is displayed.</msg>
+<arg>${SuccessUploadON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-19T11:26:08.825556" elapsed="8.023849"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:16.850116" level="INFO">Clicking element '//*[local-name()='svg' and @class='CloseIconButton-sc-19wgu2s-0 cIsOEY']/*[local-name()='path']'.</msg>
+<arg>${CloseButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:26:16.849758" elapsed="0.060537"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:17.478302" level="INFO">Element '//h2[@class="sc-GMQeP kArsSQ"]' is displayed.</msg>
+<arg>${DeleteCVButton}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-19T11:26:16.912478" elapsed="0.566163"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:17.479401" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg time="2024-09-19T11:26:17.485922" level="INFO">Verifying element '//h3[@class="H3-sc-1f2idct-0 sc-gojNiO nSMOr" and text()="Experience and Skills"]//span' contains exact text 'Needs review'.</msg>
+<arg>${NeedsReview}</arg>
+<arg>Needs review</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-19T11:26:17.479486" elapsed="0.031487"/>
+</kw>
+<kw name="Delete All and Close Browser" owner="Actions" type="TEARDOWN">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:17.530156" level="INFO">Element '//h2[@class="sc-GMQeP kArsSQ"]' is displayed.</msg>
+<arg>${DeleteCVButton}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-19T11:26:17.513339" elapsed="0.017101"/>
+</kw>
+<msg time="2024-09-19T11:26:17.530700" level="INFO">${IsDeleteCVButtonVisible} = True</msg>
+<var>${IsDeleteCVButtonVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${DeleteCVButton}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-09-19T11:26:17.513030" elapsed="0.017766"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:17.551246" level="INFO">Element '//h3[@class="H3-sc-1f2idct-0 sc-gojNiO nSMOr" and text()="Experience and Skills"]//span' is displayed.</msg>
+<arg>${NeedsReview}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-19T11:26:17.531381" elapsed="0.020076"/>
+</kw>
+<msg time="2024-09-19T11:26:17.551644" level="INFO">${IsNeedsReviewVisible} = True</msg>
+<var>${IsNeedsReviewVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${NeedsReview}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-09-19T11:26:17.531007" elapsed="0.020728"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Delete CV and Prefill" owner="Actions">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2024-09-19T11:26:17.553177" elapsed="1.213468"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:18.767904" level="INFO">Clicking element '//h2[@class="sc-GMQeP kArsSQ"]'.</msg>
+<arg>${DeleteCVbutton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:26:18.767109" elapsed="2.019460"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:20.788646" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Do you want to delete this copy of your CV?</arg>
+<arg>ACCEPT</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2024-09-19T11:26:20.788159" elapsed="0.043561"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:20.832864" level="INFO">Opening url 'https://candidate-qa-test.dev.platform.compono.dev/profile/experience-and-skills'</msg>
+<arg>https://candidate-qa-test.dev.platform.compono.dev/profile/experience-and-skills</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-19T11:26:20.832126" elapsed="0.889156"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:21.721606" level="WARN">Keyword 'Get Element Count' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Get Element Count' or 'XML.Get Element Count'.</msg>
+<msg time="2024-09-19T11:26:23.781727" level="INFO">${CountToDelete} = 3</msg>
+<var>${CountToDelete}</var>
+<arg>${DeleteButton}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:26:21.721687" elapsed="2.086564"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2024-09-19T11:26:23.821351" level="INFO">${CountToDelete} = 3</msg>
+<var>${CountToDelete}</var>
+<arg>${CountToDelete}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2024-09-19T11:26:23.820297" elapsed="0.001381"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:23.822749" level="INFO">Clicking button '//button[span="Delete this item"]'.</msg>
+<arg>${DeleteButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:26:23.822448" elapsed="0.098050"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:23.921989" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:30</msg>
+<arg>ACCEPT</arg>
+<arg>30</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2024-09-19T11:26:23.921536" elapsed="0.045689"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-19T11:26:33.970483" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-19T11:26:23.967719" elapsed="10.003422"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-19T11:26:33.972063" level="INFO">0</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-19T11:26:33.971600" elapsed="0.001016"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-09-19T11:26:23.822229" elapsed="10.150585"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:33.973943" level="INFO">Clicking button '//button[span="Delete this item"]'.</msg>
+<arg>${DeleteButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:26:33.973508" elapsed="0.061736"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:34.036164" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:30</msg>
+<arg>ACCEPT</arg>
+<arg>30</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2024-09-19T11:26:34.035702" elapsed="0.035716"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-19T11:26:44.077681" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-19T11:26:34.075837" elapsed="10.002487"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-19T11:26:44.079194" level="INFO">1</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-19T11:26:44.078758" elapsed="0.000708"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-09-19T11:26:33.973193" elapsed="10.106468"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:44.080773" level="INFO">Clicking button '//button[span="Delete this item"]'.</msg>
+<arg>${DeleteButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:26:44.080327" elapsed="0.053504"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:44.134690" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:30</msg>
+<arg>ACCEPT</arg>
+<arg>30</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2024-09-19T11:26:44.134190" elapsed="0.025316"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-19T11:26:54.162305" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-19T11:26:44.159895" elapsed="10.003060"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-19T11:26:54.163834" level="INFO">2</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-19T11:26:54.163393" elapsed="0.000712"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-09-19T11:26:44.080021" elapsed="10.084295"/>
+</iter>
+<var>${i}</var>
+<value>${CountToDelete}</value>
+<status status="PASS" start="2024-09-19T11:26:23.821875" elapsed="30.342660"/>
+</for>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:54.165219" level="INFO">Opening url 'https://candidate-qa-test.dev.platform.compono.dev/profile/qualifications'</msg>
+<arg>https://candidate-qa-test.dev.platform.compono.dev/profile/qualifications</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-19T11:26:54.164887" elapsed="1.219146"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:55.384510" level="WARN">Keyword 'Get Element Count' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Get Element Count' or 'XML.Get Element Count'.</msg>
+<msg time="2024-09-19T11:26:58.331276" level="INFO">${CountToDelete} = 2</msg>
+<var>${CountToDelete}</var>
+<arg>${DeleteButton}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:26:55.384616" elapsed="2.946855"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2024-09-19T11:26:58.332029" level="INFO">${CountToDelete} = 2</msg>
+<var>${CountToDelete}</var>
+<arg>${CountToDelete}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2024-09-19T11:26:58.331705" elapsed="0.000435"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:58.332940" level="INFO">Clicking button '//button[span="Delete this item"]'.</msg>
+<arg>${DeleteButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:26:58.332692" elapsed="0.063581"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:26:58.396862" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:30</msg>
+<arg>ACCEPT</arg>
+<arg>30</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2024-09-19T11:26:58.396573" elapsed="0.036578"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-19T11:27:08.436617" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-19T11:26:58.433877" elapsed="10.003389"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-19T11:27:08.438163" level="INFO">0</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-19T11:27:08.437724" elapsed="0.000693"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-09-19T11:26:58.332524" elapsed="10.106083"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:27:08.439695" level="INFO">Clicking button '//button[span="Delete this item"]'.</msg>
+<arg>${DeleteButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-19T11:27:08.439262" elapsed="0.052822"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2024-09-19T11:27:08.492796" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:30</msg>
+<arg>ACCEPT</arg>
+<arg>30</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2024-09-19T11:27:08.492454" elapsed="0.048874"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-19T11:27:18.544356" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-19T11:27:08.541900" elapsed="10.003094"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-19T11:27:18.545857" level="INFO">1</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-19T11:27:18.545421" elapsed="0.000689"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-09-19T11:27:08.438967" elapsed="10.107333"/>
+</iter>
+<var>${i}</var>
+<value>${CountToDelete}</value>
+<status status="PASS" start="2024-09-19T11:26:58.332274" elapsed="20.214245"/>
+</for>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-19T11:27:18.546865" elapsed="0.378497"/>
+</kw>
+<status status="PASS" start="2024-09-19T11:26:17.552653" elapsed="61.373097"/>
+</kw>
+<arg>'${IsDeleteCVButtonVisible}' == 'False' and '${IsNeedsReviewVisible}' == 'False'</arg>
+<arg>Close Browser</arg>
+<arg>ELSE IF</arg>
+<arg>'${IsDeleteCVButtonVisible}' == 'True' and '${IsNeedsReviewVisible}' == 'False'</arg>
+<arg>Delete CV</arg>
+<arg>ELSE</arg>
+<arg>Delete CV and Prefill</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-19T11:26:17.551957" elapsed="61.373993"/>
+</kw>
+<status status="PASS" start="2024-09-19T11:26:17.512267" elapsed="61.413897"/>
+</kw>
+<tag>Positive TC</tag>
+<status status="PASS" start="2024-09-19T11:25:57.376442" elapsed="81.550447"/>
+</test>
+<status status="PASS" start="2024-09-19T11:22:43.666578" elapsed="275.261954"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Negative TC</stat>
+<stat pass="2" fail="0" skip="0">Positive TC</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Test Cases">Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-19T11:22:57.431292" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg time="2024-09-19T11:24:40.833476" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg time="2024-09-19T11:26:08.704117" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg time="2024-09-19T11:26:17.479401" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg time="2024-09-19T11:26:21.721606" level="WARN">Keyword 'Get Element Count' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Get Element Count' or 'XML.Get Element Count'.</msg>
+<msg time="2024-09-19T11:26:55.384510" level="WARN">Keyword 'Get Element Count' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Get Element Count' or 'XML.Get Element Count'.</msg>
+</errors>
+</robot>
